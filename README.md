@@ -28,3 +28,18 @@ before
 after
 
 ![](./pics/assembly.png)
+
+**Assembler**
+
+```
+assembly mnemonics are converted to opcodes
+output will relocatble object file *.o
+```
+
+before
+
+![](./pics/assembly.png)
+
+after
+
+![](./pics/relocatle.png)
