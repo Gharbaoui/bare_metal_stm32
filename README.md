@@ -43,3 +43,10 @@ before
 after
 
 ![](./pics/relocatble.png)
+
+#### Linker
+
+```
+when we get the relocatble files linker combine them
+and give us one binary file
+```
