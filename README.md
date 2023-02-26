@@ -42,4 +42,4 @@ before
 
 after
 
-![](./pics/relocatle.png)
+![](./pics/relocatble.png)
