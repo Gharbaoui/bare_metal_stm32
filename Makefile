@@ -4,7 +4,10 @@ CFLAGS= -c -mcpu=$(MACHINE) -mthumb
 SRC_DIR=src
 BUILD_DIR=build
 
-all: $(BUILD_DIR)/main.o
+all: make_folders $(BUILD_DIR)/main.o
+
+make_folders:
+	mkdir -p $(BUILD_DIR)
 
 $(BUILD_DIR)/main.o:$(SRC_DIR)/main.c
 	$(CC) $(CFLAGS) $^ -o $@
