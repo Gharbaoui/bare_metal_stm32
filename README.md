@@ -50,3 +50,7 @@ after
 when we get the relocatble files linker combine them
 and give us one binary file
 ```
+
+#### Memeory map
+
+![](./pics/memory_sram.png)
