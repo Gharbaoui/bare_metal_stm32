@@ -54,3 +54,8 @@ and give us one binary file
 #### Memeory map
 
 ![](./pics/memory_sram.png)
+
+##### *Complier attibutes*
+
+![](./pics/gcc_section_placement.png)
+![](./pics/reserved_first_place_ivt.png)
