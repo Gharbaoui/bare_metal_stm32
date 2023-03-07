@@ -59,3 +59,11 @@ and give us one binary file
 
 ![](./pics/gcc_section_placement.png)
 ![](./pics/reserved_first_place_ivt.png)
+
+
+#### *linker Script*
+
+```
+linker script is text file which explains how sections of the object files
+should be merged to create final binary
+```
