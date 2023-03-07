@@ -32,6 +32,7 @@ SECTIONS
 		*(.ivt)
 		*(.text)
 		*(.rodata)
+		. = ALIGN(4);
 		_end_of_text = .;
 	}> FLASH AT> FLASH
 
@@ -39,6 +40,7 @@ SECTIONS
 	{
 		_start_of_data = .;
 		*(.data)
+		. = ALIGN(4);
 		_end_of_data = .;
 	}>SRAM AT> FLASH
 
