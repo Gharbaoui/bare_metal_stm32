@@ -11,6 +11,8 @@ extern uint32_t _end_of_text; // aka start of data
 extern uint32_t	_start_of_data; // aka start address where we should copy data to
 extern uint32_t	_end_of_data; // used with _start_of_data to get the size of data section
 
+extern uint32_t	_start_of_bss;
+extern uint32_t _end_of_bss;
 void	Reset_handler(void);
 void	Fallback_handler(void);
 
@@ -228,6 +230,8 @@ uint32_t	interrupt_vector_table[] __attribute__((section (".ivt"))) = {
 
 void	Reset_handler(void) {
 	uint32_t	data_section_size = &_end_of_data - &_start_of_data;
+	uint32_t	bss_section_size = &_end_of_bss - &_start_of_bss;
+
 	uint32_t	*src = (uint32_t*)&_end_of_text; // flash
 	uint32_t	*dst = (uint32_t*)&_start_of_data; // data
 	for (uint32_t i = 0; i < data_section_size; ++i) {
@@ -235,6 +239,14 @@ void	Reset_handler(void) {
 		++dst;
 		++src;
 	}
+
+	dst = (uint32_t*)&_start_of_bss;
+	for (uint32_t i = 0; i < bss_section_size; ++i) {
+		*dst = 0;
+	}
+	
+
+
 }
 void	Fallback_handler(void){
 
