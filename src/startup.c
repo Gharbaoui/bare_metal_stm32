@@ -13,6 +13,9 @@ extern uint32_t	_end_of_data; // used with _start_of_data to get the size of dat
 
 extern uint32_t	_start_of_bss;
 extern uint32_t _end_of_bss;
+
+int	main(void);
+
 void	Reset_handler(void);
 void	Fallback_handler(void);
 
@@ -245,7 +248,7 @@ void	Reset_handler(void) {
 		*dst = 0;
 	}
 	
-
+	main();
 
 }
 void	Fallback_handler(void){
