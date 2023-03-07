@@ -67,3 +67,11 @@ and give us one binary file
 linker script is text file which explains how sections of the object files
 should be merged to create final binary
 ```
+
+#### Align keywork in linker script
+
+###### *Before*
+![](./pics/before_align.png)
+
+###### *After*
+![](./pics/after_align.png)
