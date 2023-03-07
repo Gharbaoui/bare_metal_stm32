@@ -227,7 +227,14 @@ uint32_t	interrupt_vector_table[] __attribute__((section (".ivt"))) = {
 };
 
 void	Reset_handler(void) {
-
+	uint32_t	data_section_size = &_end_of_data - &_start_of_data;
+	uint32_t	*src = (uint32_t*)&_end_of_text; // flash
+	uint32_t	*dst = (uint32_t*)&_start_of_data; // data
+	for (uint32_t i = 0; i < data_section_size; ++i) {
+		*dst = *src;
+		++dst;
+		++src;
+	}
 }
 void	Fallback_handler(void){
 
