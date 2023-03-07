@@ -6,6 +6,11 @@
 
 #define	STACK_START SRAM_END
 
+
+extern uint32_t _end_of_text; // aka start of data
+extern uint32_t	_start_of_data; // aka start address where we should copy data to
+extern uint32_t	_end_of_data; // used with _start_of_data to get the size of data section
+
 void	Reset_handler(void);
 void	Fallback_handler(void);
 
