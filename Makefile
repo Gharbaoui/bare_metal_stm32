@@ -1,14 +1,15 @@
+SRC_DIR=src
+BUILD_DIR=build
+DEBUG_DIR=debug
 CC=arm-none-eabi-gcc
 MACHINE=cortex-m4
 CFLAGS= -c -mcpu=$(MACHINE) -mthumb -Wall -O0
-SRC_DIR=src
-BUILD_DIR=build
-LDFLAGS= -nostdlib -T $(SRC_DIR)/linker_script.ld
+LDFLAGS= -nostdlib -T $(SRC_DIR)/linker_script.ld -Wl,-Map=$(DEBUG_DIR)/final.map
 
 all: make_folders $(BUILD_DIR)/main.o $(BUILD_DIR)/startup.o $(BUILD_DIR)/final.elf
 
 make_folders:
-	mkdir -p $(BUILD_DIR)
+	mkdir -p $(BUILD_DIR) $(DEBUG_DIR)
 
 $(BUILD_DIR)/main.o:$(SRC_DIR)/main.c
 	$(CC) $(CFLAGS) $^ -o $@
