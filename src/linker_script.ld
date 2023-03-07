@@ -46,8 +46,10 @@ SECTIONS
 
 	.bss :
 	{
+		. = ALIGN(4);
 		_start_of_bss = .;
 		*(.bss)
+		. = ALIGN(4);
 		_end_of_bss = .;
 	}>SRAM
 }
