@@ -20,6 +20,9 @@ $(BUILD_DIR)/startup.o:$(SRC_DIR)/startup.c
 $(BUILD_DIR)/final.elf: $(BUILD_DIR)/main.o $(BUILD_DIR)/startup.o
 	$(CC) $(LDFLAGS) $^ -o $@
 
+upload:
+	openocd -f board/st_nucleo_f4.cfg
+
 clean:
 	rm -f $(BUILD_DIR)/*
 
