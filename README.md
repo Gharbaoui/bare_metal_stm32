@@ -75,3 +75,19 @@ should be merged to create final binary
 
 ###### *After*
 ![](./pics/after_align.png)
+
+
+###### **GDB AND OPENOCD**
+
+````
+first make sure that openocd is running
+````
+
+- arm-none-eabi-gdb
+- target remote localhost:3333
+- monitor reset init
+- monitor write_image erase path/to/binary
+- monitor reset halt
+- monitor resume
+
+![](./pics/done.jpg)
